@@ -2,6 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { PictureTransferService } from '../service/picture.transfer.service';
 import { HttpClient } from '@angular/common/http';
+import { concat } from 'rxjs';
 @Component({
   selector: 'app-dropimage',
   standalone: true,
@@ -19,6 +20,7 @@ export class DropimageComponent implements OnInit, OnDestroy {
 
     console.log(files);
     for (const file of files) {
+      let lock = false;
       const reader = new FileReader();
       reader.onload = () => {
         const image = new Image();

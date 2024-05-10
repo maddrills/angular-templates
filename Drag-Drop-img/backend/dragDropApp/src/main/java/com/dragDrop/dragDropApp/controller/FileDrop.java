@@ -10,6 +10,7 @@ import java.io.IOException;
 public class FileDrop {
 
     //single file
+    //bette to use single
     @PostMapping("/dropped")
     public void fileDisplay(@RequestParam("file") MultipartFile file)throws IOException {
 
@@ -20,5 +21,22 @@ public class FileDrop {
 
 
     }
+
+    //multi file
+//    @PostMapping("/dropped")
+//    public void fileDisplay(@RequestParam("file") MultipartFile[] file)throws IOException {
+//
+//        int counter = 0;
+//        for(MultipartFile singleFile : file){
+//            String fileName = singleFile.getOriginalFilename();
+//
+//            System.out.println(fileName);
+//            System.out.println(singleFile);
+//            counter++;
+//        }
+//
+//        System.out.println(counter);
+//
+//    }
 
 }
